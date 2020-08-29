@@ -27,4 +27,10 @@ export class HeroService {
     // In real app, instead 'of' method  we'll call HttpClient.get<Hero[]>() which also returns
     // an Observable<Hero[]> that emits a single value, an array of heroes from the body of the HTTP response.
   }
+
+  getHero(id: number): Observable<Hero> {
+    // TODO: send the message _after_ fetching the hero
+    this.messageService.add(`HeroService: fetched hero id=${id}`); //backticks ( ` ) that define a JavaScript template literal for embedding the id.
+    return of(HEROES.find(hero => hero.id === id));
+  }
 }
