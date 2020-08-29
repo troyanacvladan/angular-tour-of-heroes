@@ -23,5 +23,8 @@ export class HeroService {
 
     // reason: https://angular.io/tutorial/toh-pt4#observable-heroservice
     return of(HEROES);
+    //returns an Observable<Hero[]> that emits a single value, an array of heroes from  mock heroes.
+    // In real app, instead 'of' method  we'll call HttpClient.get<Hero[]>() which also returns
+    // an Observable<Hero[]> that emits a single value, an array of heroes from the body of the HTTP response.
   }
 }
